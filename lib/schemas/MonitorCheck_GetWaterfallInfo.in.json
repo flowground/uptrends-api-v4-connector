@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "monitorCheckId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "step": {
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "MonitorGroupGuid",
+                "IsAll"
+            ],
+            "properties": {
+                "MonitorGroupGuid": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "IsAll": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

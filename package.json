@@ -1,0 +1,15 @@
+{
+    "name": "uptrends-api-v4-connector",
+    "version": "1.0.0",
+    "description": "This document describes Uptrends API version 4. This Swagger environment also lets you execute API methods directly.\n\nPlease note that this is not a sandbox environment: these API methods operate directly on your actual Uptrends account.\n\nFor more information, please visit https://www.uptrends.com/api.",
+    "main": "component.json",
+    "dependencies": {
+        "elasticio-node": "0.0.9",
+        "elasticio-sailor-nodejs": "^2.2.1",
+        "swagger-client": "^3.8.22"
+    },
+    "author": {
+        "name": "Deutsche Telekom AG"
+    },
+    "license": "Apache-2.0"
+}

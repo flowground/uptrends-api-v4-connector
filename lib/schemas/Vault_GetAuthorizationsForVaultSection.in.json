@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "vaultSectionGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        }
+    }
+}

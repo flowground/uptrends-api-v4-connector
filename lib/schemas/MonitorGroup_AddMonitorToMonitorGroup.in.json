@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "monitorGroupGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "monitorGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        }
+    }
+}

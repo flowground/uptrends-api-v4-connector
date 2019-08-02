@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "operatorGroupGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "operatorGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        }
+    }
+}

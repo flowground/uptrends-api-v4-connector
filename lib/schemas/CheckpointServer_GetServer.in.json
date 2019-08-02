@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "serverId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

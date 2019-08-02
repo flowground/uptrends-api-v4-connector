@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "monitorGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "requestBody": {}
+    }
+}

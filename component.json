@@ -1,0 +1,1383 @@
+{
+    "title": "Uptrends API v4",
+    "description": "This document describes Uptrends API version 4. This Swagger environment also lets you execute API methods directly.\n\nPlease note that this is not a sandbox environment: these API methods operate directly on your actual Uptrends account.\n\nFor more information, please visit https://www.uptrends.com/api.",
+    "docsUrl": "",
+    "url": "https://api.uptrends.com/v4/swagger/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.uptrends.com/v4",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "auth_username": {
+                "label": "Username (user-basicauth)",
+                "viewClass": "TextFieldView",
+                "note": "Authentication with user account (for API account registration only)"
+            },
+            "auth_password": {
+                "label": "Password (user-basicauth)",
+                "viewClass": "TextFieldView",
+                "note": "Authentication with user account (for API account registration only)"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Checkpoint_GetAllCheckpoints": {
+            "main": "./lib/actions/Checkpoint_GetAllCheckpoints.js",
+            "title": "Returns all the checkpoints. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Checkpoint_GetAllCheckpoints.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Checkpoint_GetCheckpoint": {
+            "main": "./lib/actions/Checkpoint_GetCheckpoint.js",
+            "title": "Returns the specified checkpoint. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Checkpoint_GetCheckpoint.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CheckpointServer_GetServer": {
+            "main": "./lib/actions/CheckpointServer_GetServer.js",
+            "title": "Returns the specified checkpoint server.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CheckpointServer_GetServer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CheckpointServer_GetAllServerIpv4s": {
+            "main": "./lib/actions/CheckpointServer_GetAllServerIpv4s.js",
+            "title": "Anonymous call, returns all the IPv4 addresses of all the checkpoint servers. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CheckpointServer_GetAllServerIpv4s.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CheckpointServer_GetAllServerIpv6s": {
+            "main": "./lib/actions/CheckpointServer_GetAllServerIpv6s.js",
+            "title": "Anonymous call, returns all the IPv6 addresses of all the checkpoint servers. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CheckpointServer_GetAllServerIpv6s.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_GetAllMonitorGroups": {
+            "main": "./lib/actions/MonitorGroup_GetAllMonitorGroups.js",
+            "title": "Gets all monitor groups",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_GetAllMonitorGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_CreateMonitorGroup": {
+            "main": "./lib/actions/MonitorGroup_CreateMonitorGroup.js",
+            "title": "Creates a new monitor group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_CreateMonitorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_GetMonitorGroup": {
+            "main": "./lib/actions/MonitorGroup_GetMonitorGroup.js",
+            "title": "Gets the details of a monitor group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_GetMonitorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_UpdateMonitorGroup": {
+            "main": "./lib/actions/MonitorGroup_UpdateMonitorGroup.js",
+            "title": "Updates the monitor group with the Guid specified",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_UpdateMonitorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_DeleteMonitorGroup": {
+            "main": "./lib/actions/MonitorGroup_DeleteMonitorGroup.js",
+            "title": "Deletes the specified monitor group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_DeleteMonitorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_GetMonitorGroupMembers": {
+            "main": "./lib/actions/MonitorGroup_GetMonitorGroupMembers.js",
+            "title": "Gets a list of all members of a monitor group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_GetMonitorGroupMembers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_AddMaintenancePeriodToAllMembers": {
+            "main": "./lib/actions/MonitorGroup_AddMaintenancePeriodToAllMembers.js",
+            "title": "Adds the provided maintenance period to all monitors in the group specified ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_AddMaintenancePeriodToAllMembers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_AddMonitorToMonitorGroup": {
+            "main": "./lib/actions/MonitorGroup_AddMonitorToMonitorGroup.js",
+            "title": "Adds the specified monitor to the monitor group ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_AddMonitorToMonitorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_RemoveMonitorFromMonitorGroup": {
+            "main": "./lib/actions/MonitorGroup_RemoveMonitorFromMonitorGroup.js",
+            "title": "Removes the specified monitor from the monitor group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_RemoveMonitorFromMonitorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_StopAllMonitorsInGroup": {
+            "main": "./lib/actions/MonitorGroup_StopAllMonitorsInGroup.js",
+            "title": "Stops all monitors that are a member of the monitor group specified by the monitor group GUID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_StopAllMonitorsInGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_StartAllMonitorsInGroup": {
+            "main": "./lib/actions/MonitorGroup_StartAllMonitorsInGroup.js",
+            "title": "Starts all monitors that are a member of the monitor group specified by the monitor group GUID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_StartAllMonitorsInGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_StopAllMonitorAlertsInGroup": {
+            "main": "./lib/actions/MonitorGroup_StopAllMonitorAlertsInGroup.js",
+            "title": "Stops alerting for all monitors that are a member of the monitor group specified by the monitor group GUID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_StopAllMonitorAlertsInGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorGroup_StartAllMonitorAlertsInGroup": {
+            "main": "./lib/actions/MonitorGroup_StartAllMonitorAlertsInGroup.js",
+            "title": "Starts alerting for all monitors that are a member of the monitor group specified by the monitor group GUID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorGroup_StartAllMonitorAlertsInGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_GetAllOperators": {
+            "main": "./lib/actions/Operator_GetAllOperators.js",
+            "title": "Gets a list of all operators.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_GetAllOperators.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_CreateOperator": {
+            "main": "./lib/actions/Operator_CreateOperator.js",
+            "title": "Creates a new operator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_CreateOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_GetOperator": {
+            "main": "./lib/actions/Operator_GetOperator.js",
+            "title": "Gets the details of the operator with the provided OperatorGuid.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_GetOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_UpdateOperator": {
+            "main": "./lib/actions/Operator_UpdateOperator.js",
+            "title": "Updates an existing operator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_UpdateOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_DeleteOperator": {
+            "main": "./lib/actions/Operator_DeleteOperator.js",
+            "title": "Deletes an existing operator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_DeleteOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_GetOperatorGroupsForOperator": {
+            "main": "./lib/actions/Operator_GetOperatorGroupsForOperator.js",
+            "title": "Gets a list of all operator groups of which the operator with the provided OperatorGuid is a member",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_GetOperatorGroupsForOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_GetDutyScheduleForOperator": {
+            "main": "./lib/actions/Operator_GetDutyScheduleForOperator.js",
+            "title": "Gets the duty schedule for an existing operator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_GetDutyScheduleForOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_AddDutyPeriodForOperator": {
+            "main": "./lib/actions/Operator_AddDutyPeriodForOperator.js",
+            "title": "Adds a duty schedule for an existing operator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_AddDutyPeriodForOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_UpdateDutyPeriodForOperator": {
+            "main": "./lib/actions/Operator_UpdateDutyPeriodForOperator.js",
+            "title": "Updates the specified duty period from the specified Operator",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_UpdateDutyPeriodForOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Operator_DeleteDutyScheduleFromOperator": {
+            "main": "./lib/actions/Operator_DeleteDutyScheduleFromOperator.js",
+            "title": "Deletes the specified duty period from the specified Operator",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Operator_DeleteDutyScheduleFromOperator.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Miscellaneous_GetAllTimezones": {
+            "main": "./lib/actions/Miscellaneous_GetAllTimezones.js",
+            "title": "Gets all timezones available.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Miscellaneous_GetAllTimezones.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Miscellaneous_GetTimezoneById": {
+            "main": "./lib/actions/Miscellaneous_GetTimezoneById.js",
+            "title": "Gets the timezone with the specified Id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Miscellaneous_GetTimezoneById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Miscellaneous_GetAllOutgoingPhoneNumbers": {
+            "main": "./lib/actions/Miscellaneous_GetAllOutgoingPhoneNumbers.js",
+            "title": "Gets a list of all outgoing phone numbers available.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Miscellaneous_GetAllOutgoingPhoneNumbers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_GetAlloperatorGroups": {
+            "main": "./lib/actions/OperatorGroup_GetAlloperatorGroups.js",
+            "title": "Gets all operator groups",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_GetAlloperatorGroups.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_CreateoperatorGroup": {
+            "main": "./lib/actions/OperatorGroup_CreateoperatorGroup.js",
+            "title": "Creates a new operator group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_CreateoperatorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_GetOperatorGroup": {
+            "main": "./lib/actions/OperatorGroup_GetOperatorGroup.js",
+            "title": "Gets the details of a operator group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_GetOperatorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_UpdateoperatorGroup": {
+            "main": "./lib/actions/OperatorGroup_UpdateoperatorGroup.js",
+            "title": "Updates the operator group with the Guid specified",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_UpdateoperatorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_DeleteoperatorGroup": {
+            "main": "./lib/actions/OperatorGroup_DeleteoperatorGroup.js",
+            "title": "Deletes the specified operator group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_DeleteoperatorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_GetoperatorGroupMembers": {
+            "main": "./lib/actions/OperatorGroup_GetoperatorGroupMembers.js",
+            "title": "Gets a list of all members of a operator group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_GetoperatorGroupMembers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_AddDutyScheduleToAllMembers": {
+            "main": "./lib/actions/OperatorGroup_AddDutyScheduleToAllMembers.js",
+            "title": "Adds the provided duty schedule to all operators in the group specified ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_AddDutyScheduleToAllMembers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_AddOperatorToOperatorGroup": {
+            "main": "./lib/actions/OperatorGroup_AddOperatorToOperatorGroup.js",
+            "title": "Adds the specified operator to the operator group ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_AddOperatorToOperatorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "OperatorGroup_RemoveoperatorFromoperatorGroup": {
+            "main": "./lib/actions/OperatorGroup_RemoveoperatorFromoperatorGroup.js",
+            "title": "Removes the specified operator from the operator group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/OperatorGroup_RemoveoperatorFromoperatorGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetAccountMonitorChecks": {
+            "main": "./lib/actions/MonitorCheck_GetAccountMonitorChecks.js",
+            "title": "Returns all monitor check data.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetAccountMonitorChecks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetSingleMonitorCheck": {
+            "main": "./lib/actions/MonitorCheck_GetSingleMonitorCheck.js",
+            "title": "Returns a single monitor check.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetSingleMonitorCheck.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetMonitorCheck": {
+            "main": "./lib/actions/MonitorCheck_GetMonitorCheck.js",
+            "title": "Returns monitor check data for a specific monitor.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetMonitorCheck.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetMonitorGroupData": {
+            "main": "./lib/actions/MonitorCheck_GetMonitorGroupData.js",
+            "title": "Returns monitor check data for a specific monitor group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetMonitorGroupData.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetHttpDetails": {
+            "main": "./lib/actions/MonitorCheck_GetHttpDetails.js",
+            "title": "Returns HTTP details for a monitor check.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetHttpDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetMultistepDetails": {
+            "main": "./lib/actions/MonitorCheck_GetMultistepDetails.js",
+            "title": "Returns Multi-Step API details for a monitor check.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetMultistepDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetTransactionDetails": {
+            "main": "./lib/actions/MonitorCheck_GetTransactionDetails.js",
+            "title": "Returns transaction step details for a monitor check.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetTransactionDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetWaterfallInfo": {
+            "main": "./lib/actions/MonitorCheck_GetWaterfallInfo.js",
+            "title": "Returns waterfall information for a monitor check.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetWaterfallInfo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MonitorCheck_GetScreenshots": {
+            "main": "./lib/actions/MonitorCheck_GetScreenshots.js",
+            "title": "MonitorCheck_GetScreenshots",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MonitorCheck_GetScreenshots.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_GetMonitor": {
+            "main": "./lib/actions/Monitor_GetMonitor.js",
+            "title": "Returns the definition of the specified monitor. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_GetMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_PutMonitor": {
+            "main": "./lib/actions/Monitor_PutMonitor.js",
+            "title": "Updates the definition of the specified monitor.",
+            "description": "This methods only accepts a complete monitor definition. We recommend retrieving the existing definition first (using the GET method). You can then process the changes you want to make and send back the updated definition using this PUT method.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_PutMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_DeleteMonitor": {
+            "main": "./lib/actions/Monitor_DeleteMonitor.js",
+            "title": "Deletes the specified monitor.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_DeleteMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_CloneMonitor": {
+            "main": "./lib/actions/Monitor_CloneMonitor.js",
+            "title": "Creates a clone (duplicate) of the specified monitor.",
+            "description": "Upon creation, the new monitor will be inactive. This allows you to make the necessary changes before you activate it. All other settings will be transferred to the new monitor as-is.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_CloneMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_GetAllMaintenancePeriodsForMonitor": {
+            "main": "./lib/actions/Monitor_GetAllMaintenancePeriodsForMonitor.js",
+            "title": "Finds all maintenance periods for a monitor.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_GetAllMaintenancePeriodsForMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_CreateMaintenancePeriodForMonitor": {
+            "main": "./lib/actions/Monitor_CreateMaintenancePeriodForMonitor.js",
+            "title": "Saves the new maintenance period provided for the specified monitor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_CreateMaintenancePeriodForMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_DeleteMaintenancePeriodFromMonitor": {
+            "main": "./lib/actions/Monitor_DeleteMaintenancePeriodFromMonitor.js",
+            "title": "Deletes the specified maintenance period from the specified monitor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_DeleteMaintenancePeriodFromMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_UpdateMaintenancePeriodForMonitor": {
+            "main": "./lib/actions/Monitor_UpdateMaintenancePeriodForMonitor.js",
+            "title": "Updates the specified maintenance schedule for the specified monitor",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_UpdateMaintenancePeriodForMonitor.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Monitor_CleanupMaintenancePeriods": {
+            "main": "./lib/actions/Monitor_CleanupMaintenancePeriods.js",
+            "title": "Clears out all one-time maintenance periods for the specified monitor older than the specified date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Monitor_CleanupMaintenancePeriods.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Register_Post": {
+            "main": "./lib/actions/Register_Post.js",
+            "title": "Creates a new API account.",
+            "description": "This method requires that you specify the username and password of an Uptrends operator login as authentication. When registration is successful, please save the UserName and Password fields from the response: these are your new API credentials.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Register_Post.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_GetAllVaultItems": {
+            "main": "./lib/actions/Vault_GetAllVaultItems.js",
+            "title": "Returns all vault items.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_GetAllVaultItems.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_CreateNewVaultItem": {
+            "main": "./lib/actions/Vault_CreateNewVaultItem.js",
+            "title": "Creates a new vault item.",
+            "description": "The VaultItemGuid field should be omitted",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_CreateNewVaultItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_GetVaultItem": {
+            "main": "./lib/actions/Vault_GetVaultItem.js",
+            "title": "Returns the specified vault item.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_GetVaultItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_UpdateVaultItem": {
+            "main": "./lib/actions/Vault_UpdateVaultItem.js",
+            "title": "Updates the specified vault item.",
+            "description": "Only complete definitions are accepted. Fields not specified will be NULLed.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_UpdateVaultItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_DeleteVaultItem": {
+            "main": "./lib/actions/Vault_DeleteVaultItem.js",
+            "title": "Deletes the specified vault item.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_DeleteVaultItem.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_GetAllVaultSections": {
+            "main": "./lib/actions/Vault_GetAllVaultSections.js",
+            "title": "Returns all vault sections.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_GetAllVaultSections.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_CreateNewVaultSection": {
+            "main": "./lib/actions/Vault_CreateNewVaultSection.js",
+            "title": "Creates a new vault section.",
+            "description": "When a new vault section is created, the user that created the section is granted View and Edit authorizations to that section. The VaultSectionGuid attribute should be omitted in the request body. The Guid of the newly created section will be returned in the response.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_CreateNewVaultSection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_GetVaultSection": {
+            "main": "./lib/actions/Vault_GetVaultSection.js",
+            "title": "Returns the specified vault section.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_GetVaultSection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_UpdateVaultSection": {
+            "main": "./lib/actions/Vault_UpdateVaultSection.js",
+            "title": "Updates the specified vault section.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_UpdateVaultSection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_DeleteVaultSection": {
+            "main": "./lib/actions/Vault_DeleteVaultSection.js",
+            "title": "Deletes the specified vault section.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_DeleteVaultSection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_GetAuthorizationsForVaultSection": {
+            "main": "./lib/actions/Vault_GetAuthorizationsForVaultSection.js",
+            "title": "Returns all authorizations for the specified vault section.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_GetAuthorizationsForVaultSection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_CreateAuthorizationForVaultSection": {
+            "main": "./lib/actions/Vault_CreateAuthorizationForVaultSection.js",
+            "title": "Creates a new authorization for the specified vault section. ",
+            "description": "The AuthorizationId attribute should be omitted in the request body. The AuthorizationId of the newly created authorization will be returned in the response. In the ContextID attribute, fill in the VaultSectionGuid that identifies the vault section for which to create the new authorization. Valid values for the AuthorizationType field are \"ViewVaultSection\" and \"ChangeVaultSection\". An authorization should be granted to either an individual operator, or an operator group. Therefore, either specify the OperatorGuid attribute or the OperatorGroupGuid attribute.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "application/xml": "application/xml"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_CreateAuthorizationForVaultSection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Vault_DeleteAuthorizationForVaultSection": {
+            "main": "./lib/actions/Vault_DeleteAuthorizationForVaultSection.js",
+            "title": "Deletes the specified authorization for the specified vault section. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Vault_DeleteAuthorizationForVaultSection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

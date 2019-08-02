@@ -1,0 +1,86 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "VaultItemGuid",
+                "VaultSectionGuid",
+                "VaultItemType",
+                "IsSensitive"
+            ],
+            "properties": {
+                "VaultItemGuid": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                },
+                "VaultSectionGuid": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "VaultItemType": {
+                    "type": "string",
+                    "description": "",
+                    "x-enumNames": [
+                        "CredentialSet",
+                        "Certificate",
+                        "Text",
+                        "CertificateArchive"
+                    ],
+                    "enum": [
+                        "CredentialSet",
+                        "Certificate",
+                        "Text",
+                        "CertificateArchive"
+                    ]
+                },
+                "IsSensitive": {
+                    "type": "boolean"
+                },
+                "Notes": {
+                    "type": "string"
+                },
+                "UserName": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "CertificateArchive": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "NotBefore",
+                        "NotAfter"
+                    ],
+                    "properties": {
+                        "Issuer": {
+                            "type": "string"
+                        },
+                        "NotBefore": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "NotAfter": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "Password": {
+                            "type": "string"
+                        },
+                        "ArchiveData": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

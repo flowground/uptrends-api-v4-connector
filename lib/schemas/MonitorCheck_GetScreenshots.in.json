@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "monitorCheckId": {
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+        },
+        "screenshotId": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        }
+    }
+}

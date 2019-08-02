@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "monitorGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "period": {
+            "type": "string",
+            "enum": [
+                "CurrentDay",
+                "CurrentWeek",
+                "CurrentMonth",
+                "PreviousDay",
+                "PreviousWeek",
+                "PreviousMonth",
+                "Last24Hours",
+                "Last48Hours",
+                "Last7Days",
+                "Last30Days",
+                "Last60Days",
+                "Last90Days"
+            ]
+        },
+        "start": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "end": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "errorLevel": {
+            "type": "string",
+            "enum": [
+                "NoError",
+                "Unconfirmed",
+                "Confirmed"
+            ],
+            "default": "NoError"
+        },
+        "cursor": {
+            "type": "string"
+        },
+        "sorting": {
+            "type": "string",
+            "enum": [
+                "Ascending",
+                "Descending"
+            ],
+            "default": "Ascending"
+        },
+        "take": {
+            "type": "integer",
+            "format": "int32",
+            "default": 100
+        }
+    }
+}

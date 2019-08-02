@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "OperatorGroupGuid"
+            ],
+            "properties": {
+                "OperatorGroupGuid": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "IsEveryone": {
+                    "type": "boolean"
+                },
+                "IsAdministratorsGroup": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

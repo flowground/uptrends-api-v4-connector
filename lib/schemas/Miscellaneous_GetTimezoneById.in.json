@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+        "timezoneId": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

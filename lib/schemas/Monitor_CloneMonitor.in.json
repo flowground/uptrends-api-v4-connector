@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "monitorGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "includeMaintenancePeriods": {
+            "type": "boolean",
+            "default": true
+        },
+        "includeOperatorGroups": {
+            "type": "boolean",
+            "default": true
+        }
+    }
+}

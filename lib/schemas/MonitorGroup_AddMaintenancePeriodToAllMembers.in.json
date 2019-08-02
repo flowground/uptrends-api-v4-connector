@@ -1,0 +1,93 @@
+{
+    "type": "object",
+    "properties": {
+        "monitorGroupGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "requestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "Id",
+                "ScheduleMode",
+                "MaintenanceType"
+            ],
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "ScheduleMode": {
+                    "type": "string",
+                    "description": "",
+                    "x-enumNames": [
+                        "OneTime",
+                        "Daily",
+                        "Weekly",
+                        "Monthly"
+                    ],
+                    "enum": [
+                        "OneTime",
+                        "Daily",
+                        "Weekly",
+                        "Monthly"
+                    ]
+                },
+                "StartDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "EndDateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "WeekDay": {
+                    "type": "string",
+                    "description": "",
+                    "x-enumNames": [
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                    ],
+                    "enum": [
+                        "Sunday",
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                    ]
+                },
+                "MonthDay": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "MaintenanceType": {
+                    "type": "string",
+                    "description": "",
+                    "x-enumNames": [
+                        "DisableMonitoring",
+                        "DisableNotifications"
+                    ],
+                    "enum": [
+                        "DisableMonitoring",
+                        "DisableNotifications"
+                    ]
+                }
+            }
+        }
+    }
+}

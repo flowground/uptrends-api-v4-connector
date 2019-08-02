@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "VaultSectionGuid"
+            ],
+            "properties": {
+                "VaultSectionGuid": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

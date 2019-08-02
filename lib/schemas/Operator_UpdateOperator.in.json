@@ -1,0 +1,84 @@
+{
+    "type": "object",
+    "properties": {
+        "operatorGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "requestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "OperatorGuid",
+                "IsAccountAdministrator",
+                "IsOnDuty",
+                "SmsProvider"
+            ],
+            "properties": {
+                "OperatorGuid": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "FullName": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "MobilePhone": {
+                    "type": "string"
+                },
+                "OutgoingPhoneNumberId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "IsAccountAdministrator": {
+                    "type": "boolean"
+                },
+                "BackupEmail": {
+                    "type": "string"
+                },
+                "IsOnDuty": {
+                    "type": "boolean"
+                },
+                "CultureName": {
+                    "type": "string"
+                },
+                "TimeZoneId": {
+                    "type": "integer"
+                },
+                "SmsProvider": {
+                    "type": "string",
+                    "description": "",
+                    "x-enumNames": [
+                        "UseAccountSetting",
+                        "SmsProviderEurope",
+                        "SmsProviderInternational",
+                        "SmsProviderEurope2",
+                        "SmsProviderUSA"
+                    ],
+                    "enum": [
+                        "UseAccountSetting",
+                        "SmsProviderEurope",
+                        "SmsProviderInternational",
+                        "SmsProviderEurope2",
+                        "SmsProviderUSA"
+                    ]
+                },
+                "UseNumericSender": {
+                    "type": "boolean"
+                },
+                "AllowNativeLogin": {
+                    "type": "boolean"
+                },
+                "AllowSingleSignon": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

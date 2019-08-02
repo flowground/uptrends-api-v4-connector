@@ -1,0 +1,57 @@
+{
+    "type": "object",
+    "properties": {
+        "vaultSectionGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "requestBody": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "AuthorizationId",
+                "ContextId",
+                "AuthorizationType"
+            ],
+            "properties": {
+                "AuthorizationId": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "ContextId": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "AuthorizationType": {
+                    "type": "string",
+                    "description": "",
+                    "x-enumNames": [
+                        "ViewDashboard",
+                        "ChangeDashboard",
+                        "ShareDashboards",
+                        "ViewPublicDashboard",
+                        "ViewVaultSection",
+                        "ChangeVaultSection"
+                    ],
+                    "enum": [
+                        "ViewDashboard",
+                        "ChangeDashboard",
+                        "ShareDashboards",
+                        "ViewPublicDashboard",
+                        "ViewVaultSection",
+                        "ChangeVaultSection"
+                    ]
+                },
+                "OperatorGuid": {
+                    "type": "string",
+                    "format": "guid"
+                },
+                "OperatorGroupGuid": {
+                    "type": "string",
+                    "format": "guid"
+                }
+            }
+        }
+    }
+}

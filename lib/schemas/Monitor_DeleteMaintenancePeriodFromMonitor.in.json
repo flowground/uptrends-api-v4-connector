@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "monitorGuid": {
+            "required": true,
+            "type": "string",
+            "format": "guid"
+        },
+        "maintenancePeriodId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

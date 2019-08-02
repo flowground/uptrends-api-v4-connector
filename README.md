@@ -5,7 +5,7 @@
 A generated **flow**ground connector for the Uptrends API v4 API (version 1.0.0).
 
 Generated from: https://api.uptrends.com/v4/swagger/v1/swagger.json<br/>
-Generated at: 2019-08-02T15:22:15+03:00
+Generated at: 2019-08-02T15:29:24+03:00
 
 ## API Description
 
@@ -18,8 +18,8 @@ For more information, please visit https://www.uptrends.com/api.<br/>
 ## Authorization
 
 Supported authorization schemes:
-- Basic Authentication
-- Basic Authentication
+- Basic Authentication - Authentication with API account
+- Basic Authentication - Authentication with user account (for API account registration only)
 
 ## Actions
 
